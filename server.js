@@ -12,7 +12,22 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+// Index
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname + "/index.html"));
+});
+
 // View Tables
 app.get("/tables", function(req, res) {
-    res.json();
+    res.sendFile(path.join(__dirname + "/tables.html"));
+    console.log(__dirname);
+});
+
+// View Reservations
+app.get("/reservations", function(req, res) {
+    res.sendFile(path.join(__dirname + "/reservations.html"));
+});
+
+app.listen(PORT, function() {
+    console.log(`Listening on PORT ${PORT}`)
 });

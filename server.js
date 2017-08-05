@@ -12,3 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+// View Tables
+app.get("/tables", function(req, res) {
+    res.json();
+});
